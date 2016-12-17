@@ -11,9 +11,9 @@ gem 'sass-rails'
 gem 'materialize-sass'
 gem 'administrate'
 gem 'httparty'
+gem 'dotenv-rails'
 
 group :development, :test do
-  gem 'dotenv'
   gem 'pry'
   gem 'pry-byebug'
 end
