@@ -35,7 +35,7 @@ Rails.application.routes.draw do
   get 'approval', to: 'ratings#approval'
   resources :profiles
   resources :dashboard
-  resources :users_roads_photo_maps, :path => "upload_photo" #Alais route
+  resources :users_roads_photo_maps
   resources :roads, defaults: {format: :json} do
     member do
       get :info

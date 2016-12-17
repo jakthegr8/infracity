@@ -1,6 +1,6 @@
 class DashboardController < ApplicationController
   def index
-    render json: Road.all
+    render json: {roads: Road.all}
   end
 
   def home
