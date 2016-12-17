@@ -5,7 +5,7 @@ class Rating < ApplicationRecord
 
   def photos
     road.users_roads_photo_maps.map { |photo_map|
-      {thumbnail: photo_map.photo.url(:thumbnail),  original: photo_map.photo.url}
+      {thumbnail: photo_map.photo.url(:thumb),  original: photo_map.photo.url}
     }
   end
 
