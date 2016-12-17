@@ -47,15 +47,10 @@ class RatingsController < ApplicationController
   # POST /ratings.json
   def create
     @rating = Rating.new(rating_params)
-
-    respond_to do |format|
-      if @rating.save
-        format.html { redirect_to @rating, notice: 'Rating was successfully created.' }
-        format.json { render json: @rating }
-      else
-        format.html { render :new }
-        format.json { render json: @rating.errors, status: :unprocessable_entity }
-      end
+    if @rating.save
+      render json: @rating, status: 201
+    else
+      render json: @rating.errors, status: :unprocessable_entity
     end
   end
 
@@ -84,14 +79,16 @@ class RatingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_rating
-      @rating = Rating.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def rating_params
-      all_rating_params = params.require(:rating) ? params.require(:rating) : params
-      all_rating_params.permit(:user_id, :road_quality, :encroachment, :platform_usability, :safety, :comments, :road_id, :photo)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_rating
+    @rating = Rating.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def rating_params
+    binding.pry
+    all_rating_params = params[:rating] ? params.require(:rating) : params
+    all_rating_params.permit(:user_id, :road_quality, :encroachment, :platform_usability, :safety, :comments, :road_id, :photo)
+  end
 end
