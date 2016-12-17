@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161217152226) do
+ActiveRecord::Schema.define(version: 20161217174245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -122,6 +122,19 @@ ActiveRecord::Schema.define(version: 20161217152226) do
     t.index ["role_type_id"], name: "index_users_on_role_type_id", using: :btree
   end
 
+  create_table "users_roads_photo_maps", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "road_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["road_id"], name: "index_users_roads_photo_maps_on_road_id", using: :btree
+    t.index ["user_id"], name: "index_users_roads_photo_maps_on_user_id", using: :btree
+  end
+
   create_table "users_roles_maps", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "role_type_id"
@@ -164,6 +177,8 @@ ActiveRecord::Schema.define(version: 20161217152226) do
   add_foreign_key "states", "countries"
   add_foreign_key "taluks", "districts"
   add_foreign_key "users", "role_types"
+  add_foreign_key "users_roads_photo_maps", "roads"
+  add_foreign_key "users_roads_photo_maps", "users"
   add_foreign_key "users_roles_maps", "role_types"
   add_foreign_key "users_roles_maps", "users"
   add_foreign_key "wards", "zones"

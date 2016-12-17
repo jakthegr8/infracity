@@ -1,0 +1,6 @@
+<%= form_for @photo, url: users_roads_photo_maps_path, html: { multipart: true } do |form| %>
+  <%= form.text_field :road_id %>
+  <%= form.text_field :user_id %>
+  <%= form.file_field :photo %>
+  <%= form.submit %>
+<% end %>

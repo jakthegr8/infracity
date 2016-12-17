@@ -23,12 +23,11 @@
           <td>
             <strong>Road: </strong><%= rating.road.summary %><br>
             <strong>Comments: </strong><%= rating.comments %><br>
-            <a class="fancybox" rel="group" href="http://www.hutui6.com/data/out/165/66849455-road-wallpapers.jpeg">
-              <img class='thumbsize' src="http://www.secondose.com/wp-content/uploads/2007/10/basketball.thumbnail.jpg" alt="" />
-            </a>
-            <a class="fancybox" rel="group" href="http://www.hutui6.com/data/out/165/66849455-road-wallpapers.jpeg">
-              <img class='thumbsize' src="http://www.secondose.com/wp-content/uploads/2007/10/basketball.thumbnail.jpg" alt="" />
-            </a>
+            <% rating.photos.each do |photo| %>
+              <a class="fancybox" rel="group" href="<%= photo[:original] %>">
+                <img class='thumbsize' src="<%= photo[:thumbnail] %>" alt="" />
+              </a>
+            <% end %>
           </td>
           <td><%= star_html(rating.platform_usability) %></td>
           <td><%= star_html(rating.safety) %></td>

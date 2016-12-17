@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  road: one
+  photo: 
+
+two:
+  user: two
+  road: two
+  photo: 
