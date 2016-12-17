@@ -1,0 +1,47 @@
+<%= form_for(rating) do |f| %>
+  <% if rating.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
+
+      <ul>
+      <% rating.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :road_quality %>
+    <%= f.number_field :road_quality %>
+  </div>
+
+  <div class="field">
+    <%= f.label :encroachment %>
+    <%= f.number_field :encroachment %>
+  </div>
+
+  <div class="field">
+    <%= f.label :platform_usability %>
+    <%= f.number_field :platform_usability %>
+  </div>
+
+  <div class="field">
+    <%= f.label :safety %>
+    <%= f.number_field :safety %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comments %>
+    <%= f.text_area :comments %>
+  </div>
+
+  <div class="field">
+    <%= f.label :road_id %>
+    <%= f.number_field :road_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

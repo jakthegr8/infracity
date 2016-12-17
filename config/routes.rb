@@ -20,7 +20,13 @@ Rails.application.routes.draw do
     resources :complaints, only: [:show]
   end
 
+  resources :ratings
   resources :profiles
   resources :dashboard
+  resources :roads, defaults: {format: :json} do
+    member do
+      get :info
+    end
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
