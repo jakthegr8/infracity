@@ -4,9 +4,7 @@ class UsersRoadsPhotoMapsController < ApplicationController
   end
 
   def create
-    binding.pry
     @photo = UsersRoadsPhotoMap.create(photo_maps_params)
-    binding.pry
     if @photo.errors.empty?
       render json: {}, status: :created
     else
