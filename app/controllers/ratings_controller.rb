@@ -1,5 +1,5 @@
 class RatingsController < ApplicationController
-  before_action :set_rating, only: [:show, :edit, :update, :destroy]
+  before_action :set_rating, only: [:show, :edit, :update, :destroy, :approve, :reject]
 
   # GET /ratings
   # GET /ratings.json
@@ -9,6 +9,24 @@ class RatingsController < ApplicationController
 
   def approval
     @ratings = Rating.where(status: :pending).includes(:road, :user)
+  end
+
+  def approve
+    @rating.approve!
+    redirect_to approval_path, notice: 'Successfully Approved'
+  end
+
+  def reject
+    @rating.reject!
+    redirect_to approval_path, notice: 'Successfully Rejected'
+  end
+
+  def reset
+    Rating.all.each do |rating|
+      rating.status = :pending
+      rating.save!
+    end
+    redirect_to approval_path
   end
 
   # GET /ratings/1

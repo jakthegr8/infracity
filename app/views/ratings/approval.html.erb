@@ -1,45 +1,59 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Approve</h1>
+<h4>Approve Submissions</h4>
 
-<table>
-  <thead>
-    <tr>
-      <th>Road</th>
-      <th>Encroachment</th>
-      <th>Platform usability</th>
-      <th>Safety</th>
-      <th>Overall quality</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @ratings.each do |rating| %>
+<% if @ratings.size <= 0 %>
+  <p>No submissions left to approve!</p>
+<% else %>
+  <table>
+    <thead>
       <tr>
-        <td>
-          <%= rating.road.summary %><br>
-          <%= rating.user.email %><br>
-          <%= rating.status %><br>
-          <strong>Comments: </strong><%= rating.comments %><br>
-        </td>
-        <td><%= star_html(rating.road_quality) %></td>
-        <td><%= star_html(rating.encroachment) %></td>
-        <td><%= star_html(rating.platform_usability) %></td>
-        <td><%= star_html(rating.safety) %></td>
+        <th>Road</th>
+        <th>Platform</th>
+        <th>Safety</th>
+        <th>Quality</th>
+        <th>Encroachment</th>
+        <th>Approve?</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @ratings.each do |rating| %>
+        <tr>
+          <td>
+            <strong>Road: </strong><%= rating.road.summary %><br>
+            <strong>Comments: </strong><%= rating.comments %><br>
+            <a class="fancybox" rel="group" href="http://www.hutui6.com/data/out/165/66849455-road-wallpapers.jpeg">
+              <img class='thumbsize' src="http://www.secondose.com/wp-content/uploads/2007/10/basketball.thumbnail.jpg" alt="" />
+            </a>
+            <a class="fancybox" rel="group" href="http://www.hutui6.com/data/out/165/66849455-road-wallpapers.jpeg">
+              <img class='thumbsize' src="http://www.secondose.com/wp-content/uploads/2007/10/basketball.thumbnail.jpg" alt="" />
+            </a>
+          </td>
+          <td><%= star_html(rating.platform_usability) %></td>
+          <td><%= star_html(rating.safety) %></td>
+          <td><%= star_html(rating.road_quality) %></td>
+          <td><%= star_html(rating.encroachment) %></td>
+          <td>
+            <%= link_to 'Yes', approve_rating_path(rating.id) %> /
+            <%= link_to 'No', reject_rating_path(rating.id) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Rating', new_rating_path %>
+  <br>
 
-<script type='text/javascript'>
-  $(function() {
+  <script type='text/javascript'>
+    $(document).ready(function() {
+      $(".fancybox").fancybox();
       $('.rating').barrating({
         theme: 'fontawesome-stars',
         readonly: true
       });
-   });
-</script>
+    });
+  </script>
+
+<% end %>
+

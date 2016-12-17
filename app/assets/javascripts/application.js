@@ -12,7 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.barrating.js
+//= require jquery.barrating
+//= require jquery.mousewheel
 //= require turbolinks
 //= require materialize-sprockets
 //= require_tree .

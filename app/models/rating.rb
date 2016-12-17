@@ -3,4 +3,14 @@ class Rating < ApplicationRecord
   belongs_to :user
 
   enum status: [ :pending, :approved, :rejected ]
+
+  def approve!
+    self.status = :approved
+    self.save!
+  end
+
+  def reject!
+    self.status = :rejected
+    self.save!
+  end
 end

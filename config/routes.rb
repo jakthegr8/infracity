@@ -21,7 +21,15 @@ Rails.application.routes.draw do
     resources :complaints, only: [:show, :create, :index]
   end
 
-  resources :ratings
+  resources :ratings do
+    collection do
+      get :reset
+    end
+    member do
+      get :approve
+      get :reject
+    end
+  end
   get 'approval', to: 'ratings#approval'
   resources :profiles
   resources :dashboard
