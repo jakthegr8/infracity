@@ -16,7 +16,7 @@ two:
   platform_usability: 4
   safety: 1
   comments: Bad Road
-  status: 1
+  status: 0
   road_id: 2
   user_id: 1
 
@@ -26,6 +26,6 @@ three:
   platform_usability: 1
   safety: 1
   comments: Okay Road
-  status: 2
+  status: 0
   road_id: 3
   user_id: 1
