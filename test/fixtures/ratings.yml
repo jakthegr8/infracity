@@ -17,7 +17,7 @@ two:
   safety: 1
   comments: Bad Road
   status: 1
-  road_id: 1
+  road_id: 2
   user_id: 1
 
 three:
@@ -27,5 +27,5 @@ three:
   safety: 1
   comments: Okay Road
   status: 2
-  road_id: 1
+  road_id: 3
   user_id: 1
