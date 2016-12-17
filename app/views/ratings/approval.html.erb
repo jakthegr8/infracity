@@ -25,7 +25,7 @@
             <strong>Comments: </strong><%= rating.comments %><br>
             <% rating.photos.each do |photo| %>
               <a class="fancybox" rel="group" href="<%= photo[:original] %>">
-                <img class='thumbsize' src="<%= photo[:thumbnail] %>" alt="" />
+                <img class='thumbsize img-circle' src="<%= photo[:thumbnail] %>" alt="" />
               </a>
             <% end %>
           </td>
