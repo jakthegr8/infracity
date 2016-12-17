@@ -1,7 +1,7 @@
 one:
-  user: one
-  role_type: one
+  user: Arun
+  role_type: Admin
 
 two:
-  user: two
-  role_type: two
+  user: Antony
+  role_type: Admin

@@ -26,6 +26,7 @@ class UserDashboard < Administrate::BaseDashboard
     :role_type,
     :id,
     :name,
+    :email,
     :password,
   ].freeze
 

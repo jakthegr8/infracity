@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  post 'users/register', as: 'register'
+
   namespace :admin do
     resources :countries
     resources :districts

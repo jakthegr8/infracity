@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :password
       t.string :email
-      t.references :users_roles_map, polymorphic: true
+      t.references :role_type, foreign_key: true
 
       t.timestamps
     end
