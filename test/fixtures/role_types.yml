@@ -6,4 +6,4 @@ Admin:
   
 General:
   name: General
-  is_default: false
+  is_default: true
