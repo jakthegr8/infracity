@@ -1,0 +1,1644 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html oncontextmenu="return false">
+<head>
+<title>View Complaints</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta http-equiv="expires" content="-1">
+ <meta http-equiv="pragma" content="no-cache">
+<style type="text/css">
+/*margin and padding on body element
+  can introduce errors in determining
+  element position and are not recommended;
+  we turn them off as a foundation for YUI
+  CSS treatments. */
+body {
+	margin:0;
+	padding:0;
+}
+</style>
+  <style type="text/css">
+ TABLE {
+ 	FONT-SIZE: 10pt; FONT-WEIGHT: normal; TEXT-DECORATION: none; FONT-COLOR: black
+ }
+ </style>
+
+<style type="text/css">
+#myAutoComplete {
+    width:25em; /* set width here or else widget will expand to fit its container */
+    padding-bottom:2em;
+}
+</style>
+
+<script type="text/javascript" src="/pgr/js/validations.js"></script>
+<script type="text/javascript" src="/pgr/js/displayBoundaries.js"></script>
+<script type="text/javascript" src="/pgr/js/displayUsers.js"></script>
+<script type="text/javascript" src="/pgr/commonjs/ajaxCommonFunctions.js"></script>
+
+
+<script language="JavaScript" type="text/javascript">
+
+window.document.onkeydown = function(event) {  
+	switch (event.keyCode) {  
+	case 116 : //F5 button 
+	   event.returnValue = false; 
+	   event.keyCode = 0; 
+	   return false;  
+	case 82 : //R button 
+	   if (event.ctrlKey) { //Ctrl button 
+	       event.returnValue = false;  
+	       event.keyCode = 0;   
+	       return false;  
+	   }  
+	} 
+	} 
+
+
+
+
+
+
+function ComplaintGroupCheck()
+{
+
+	var len = document.GreViewForm.complaintType.options.length;
+	for(var i=0;i<len;i++)
+	{
+			document.GreViewForm.complaintType.options[0] = null;
+	}
+	if(document.GreViewForm.compGpID.options[document.GreViewForm.compGpID.selectedIndex].text == document.getElementById('Choose').getAttribute('value'))
+	{
+
+	document.GreViewForm.complaintType.options[0] = new Option(document.getElementById('Choose').getAttribute('value'),0,true,true);
+	}
+
+			var temp=document.getElementById('COMPGPID1').getAttribute('value');
+			if(document.GreViewForm.compGpID.options[document.GreViewForm.compGpID.selectedIndex].text == temp)
+			{
+
+							document.GreViewForm.complaintType.options[1] =new Option(document.getElementById('comtype11').getAttribute('value'),"11",true,true);
+
+							document.GreViewForm.complaintType.options[2] =new Option(document.getElementById('comtype12').getAttribute('value'),"12",true,true);
+
+							document.GreViewForm.complaintType.options[3] =new Option(document.getElementById('comtype13').getAttribute('value'),"13",true,true);
+
+							document.GreViewForm.complaintType.options[4] =new Option(document.getElementById('comtype14').getAttribute('value'),"14",true,true);
+
+							document.GreViewForm.complaintType.options[5] =new Option(document.getElementById('comtype15').getAttribute('value'),"15",true,true);
+
+							document.GreViewForm.complaintType.options[6] =new Option(document.getElementById('comtype16').getAttribute('value'),"16",true,true);
+
+							document.GreViewForm.complaintType.options[7] =new Option(document.getElementById('comtype17').getAttribute('value'),"17",true,true);
+
+							document.GreViewForm.complaintType.options[8] =new Option(document.getElementById('comtype18').getAttribute('value'),"18",true,true);
+
+							document.GreViewForm.complaintType.options[9] =new Option(document.getElementById('comtype19').getAttribute('value'),"19",true,true);
+
+							document.GreViewForm.complaintType.options[10] =new Option(document.getElementById('comtype21').getAttribute('value'),"21",true,true);
+
+							document.GreViewForm.complaintType.options[11] =new Option(document.getElementById('comtype22').getAttribute('value'),"22",true,true);
+
+							document.GreViewForm.complaintType.options[12] =new Option(document.getElementById('comtype23').getAttribute('value'),"23",true,true);
+
+							document.GreViewForm.complaintType.options[13] =new Option(document.getElementById('comtype24').getAttribute('value'),"24",true,true);
+
+							document.GreViewForm.complaintType.options[14] =new Option(document.getElementById('comtype25').getAttribute('value'),"25",true,true);
+
+							document.GreViewForm.complaintType.options[15] =new Option(document.getElementById('comtype26').getAttribute('value'),"26",true,true);
+
+							document.GreViewForm.complaintType.options[16] =new Option(document.getElementById('comtype27').getAttribute('value'),"27",true,true);
+
+							document.GreViewForm.complaintType.options[17] =new Option(document.getElementById('comtype28').getAttribute('value'),"28",true,true);
+
+							document.GreViewForm.complaintType.options[18] =new Option(document.getElementById('comtype29').getAttribute('value'),"29",true,true);
+
+							document.GreViewForm.complaintType.options[19] =new Option(document.getElementById('comtype30').getAttribute('value'),"30",true,true);
+
+							document.GreViewForm.complaintType.options[20] =new Option(document.getElementById('comtype31').getAttribute('value'),"31",true,true);
+
+							document.GreViewForm.complaintType.options[21] =new Option(document.getElementById('comtype32').getAttribute('value'),"32",true,true);
+
+							document.GreViewForm.complaintType.options[22] =new Option(document.getElementById('comtype33').getAttribute('value'),"33",true,true);
+
+							document.GreViewForm.complaintType.options[23] =new Option(document.getElementById('comtype34').getAttribute('value'),"34",true,true);
+
+							document.GreViewForm.complaintType.options[24] =new Option(document.getElementById('comtype37').getAttribute('value'),"37",true,true);
+
+							document.GreViewForm.complaintType.options[25] =new Option(document.getElementById('comtype41').getAttribute('value'),"41",true,true);
+
+							document.GreViewForm.complaintType.options[26] =new Option(document.getElementById('comtype42').getAttribute('value'),"42",true,true);
+
+
+			document.GreViewForm.complaintType.options[0] = new Option(document.getElementById('Choose').getAttribute('value'),0,true,true)
+
+			}
+
+
+			var temp=document.getElementById('COMPGPID2').getAttribute('value');
+			if(document.GreViewForm.compGpID.options[document.GreViewForm.compGpID.selectedIndex].text == temp)
+			{
+
+							document.GreViewForm.complaintType.options[1] =new Option(document.getElementById('comtype92').getAttribute('value'),"92",true,true);
+
+							document.GreViewForm.complaintType.options[2] =new Option(document.getElementById('comtype51').getAttribute('value'),"51",true,true);
+
+
+			document.GreViewForm.complaintType.options[0] = new Option(document.getElementById('Choose').getAttribute('value'),0,true,true)
+
+			}
+
+
+			var temp=document.getElementById('COMPGPID3').getAttribute('value');
+			if(document.GreViewForm.compGpID.options[document.GreViewForm.compGpID.selectedIndex].text == temp)
+			{
+
+							document.GreViewForm.complaintType.options[1] =new Option(document.getElementById('comtype82').getAttribute('value'),"82",true,true);
+
+							document.GreViewForm.complaintType.options[2] =new Option(document.getElementById('comtype83').getAttribute('value'),"83",true,true);
+
+							document.GreViewForm.complaintType.options[3] =new Option(document.getElementById('comtype84').getAttribute('value'),"84",true,true);
+
+							document.GreViewForm.complaintType.options[4] =new Option(document.getElementById('comtype85').getAttribute('value'),"85",true,true);
+
+							document.GreViewForm.complaintType.options[5] =new Option(document.getElementById('comtype86').getAttribute('value'),"86",true,true);
+
+							document.GreViewForm.complaintType.options[6] =new Option(document.getElementById('comtype87').getAttribute('value'),"87",true,true);
+
+							document.GreViewForm.complaintType.options[7] =new Option(document.getElementById('comtype88').getAttribute('value'),"88",true,true);
+
+							document.GreViewForm.complaintType.options[8] =new Option(document.getElementById('comtype89').getAttribute('value'),"89",true,true);
+
+							document.GreViewForm.complaintType.options[9] =new Option(document.getElementById('comtype90').getAttribute('value'),"90",true,true);
+
+							document.GreViewForm.complaintType.options[10] =new Option(document.getElementById('comtype3').getAttribute('value'),"3",true,true);
+
+							document.GreViewForm.complaintType.options[11] =new Option(document.getElementById('comtype7').getAttribute('value'),"7",true,true);
+
+							document.GreViewForm.complaintType.options[12] =new Option(document.getElementById('comtype10').getAttribute('value'),"10",true,true);
+
+							document.GreViewForm.complaintType.options[13] =new Option(document.getElementById('comtype49').getAttribute('value'),"49",true,true);
+
+							document.GreViewForm.complaintType.options[14] =new Option(document.getElementById('comtype57').getAttribute('value'),"57",true,true);
+
+							document.GreViewForm.complaintType.options[15] =new Option(document.getElementById('comtype58').getAttribute('value'),"58",true,true);
+
+							document.GreViewForm.complaintType.options[16] =new Option(document.getElementById('comtype59').getAttribute('value'),"59",true,true);
+
+							document.GreViewForm.complaintType.options[17] =new Option(document.getElementById('comtype60').getAttribute('value'),"60",true,true);
+
+							document.GreViewForm.complaintType.options[18] =new Option(document.getElementById('comtype61').getAttribute('value'),"61",true,true);
+
+							document.GreViewForm.complaintType.options[19] =new Option(document.getElementById('comtype62').getAttribute('value'),"62",true,true);
+
+							document.GreViewForm.complaintType.options[20] =new Option(document.getElementById('comtype63').getAttribute('value'),"63",true,true);
+
+							document.GreViewForm.complaintType.options[21] =new Option(document.getElementById('comtype64').getAttribute('value'),"64",true,true);
+
+							document.GreViewForm.complaintType.options[22] =new Option(document.getElementById('comtype65').getAttribute('value'),"65",true,true);
+
+							document.GreViewForm.complaintType.options[23] =new Option(document.getElementById('comtype66').getAttribute('value'),"66",true,true);
+
+							document.GreViewForm.complaintType.options[24] =new Option(document.getElementById('comtype67').getAttribute('value'),"67",true,true);
+
+							document.GreViewForm.complaintType.options[25] =new Option(document.getElementById('comtype68').getAttribute('value'),"68",true,true);
+
+							document.GreViewForm.complaintType.options[26] =new Option(document.getElementById('comtype69').getAttribute('value'),"69",true,true);
+
+							document.GreViewForm.complaintType.options[27] =new Option(document.getElementById('comtype70').getAttribute('value'),"70",true,true);
+
+							document.GreViewForm.complaintType.options[28] =new Option(document.getElementById('comtype71').getAttribute('value'),"71",true,true);
+
+							document.GreViewForm.complaintType.options[29] =new Option(document.getElementById('comtype72').getAttribute('value'),"72",true,true);
+
+							document.GreViewForm.complaintType.options[30] =new Option(document.getElementById('comtype73').getAttribute('value'),"73",true,true);
+
+							document.GreViewForm.complaintType.options[31] =new Option(document.getElementById('comtype74').getAttribute('value'),"74",true,true);
+
+							document.GreViewForm.complaintType.options[32] =new Option(document.getElementById('comtype75').getAttribute('value'),"75",true,true);
+
+							document.GreViewForm.complaintType.options[33] =new Option(document.getElementById('comtype76').getAttribute('value'),"76",true,true);
+
+							document.GreViewForm.complaintType.options[34] =new Option(document.getElementById('comtype77').getAttribute('value'),"77",true,true);
+
+							document.GreViewForm.complaintType.options[35] =new Option(document.getElementById('comtype78').getAttribute('value'),"78",true,true);
+
+							document.GreViewForm.complaintType.options[36] =new Option(document.getElementById('comtype79').getAttribute('value'),"79",true,true);
+
+							document.GreViewForm.complaintType.options[37] =new Option(document.getElementById('comtype80').getAttribute('value'),"80",true,true);
+
+							document.GreViewForm.complaintType.options[38] =new Option(document.getElementById('comtype81').getAttribute('value'),"81",true,true);
+
+
+			document.GreViewForm.complaintType.options[0] = new Option(document.getElementById('Choose').getAttribute('value'),0,true,true)
+
+			}
+
+
+			var temp=document.getElementById('COMPGPID4').getAttribute('value');
+			if(document.GreViewForm.compGpID.options[document.GreViewForm.compGpID.selectedIndex].text == temp)
+			{
+
+							document.GreViewForm.complaintType.options[1] =new Option(document.getElementById('comtype43').getAttribute('value'),"43",true,true);
+
+							document.GreViewForm.complaintType.options[2] =new Option(document.getElementById('comtype44').getAttribute('value'),"44",true,true);
+
+							document.GreViewForm.complaintType.options[3] =new Option(document.getElementById('comtype46').getAttribute('value'),"46",true,true);
+
+
+			document.GreViewForm.complaintType.options[0] = new Option(document.getElementById('Choose').getAttribute('value'),0,true,true)
+
+			}
+
+
+			var temp=document.getElementById('COMPGPID5').getAttribute('value');
+			if(document.GreViewForm.compGpID.options[document.GreViewForm.compGpID.selectedIndex].text == temp)
+			{
+
+							document.GreViewForm.complaintType.options[1] =new Option(document.getElementById('comtype1').getAttribute('value'),"1",true,true);
+
+							document.GreViewForm.complaintType.options[2] =new Option(document.getElementById('comtype2').getAttribute('value'),"2",true,true);
+
+							document.GreViewForm.complaintType.options[3] =new Option(document.getElementById('comtype4').getAttribute('value'),"4",true,true);
+
+							document.GreViewForm.complaintType.options[4] =new Option(document.getElementById('comtype5').getAttribute('value'),"5",true,true);
+
+							document.GreViewForm.complaintType.options[5] =new Option(document.getElementById('comtype6').getAttribute('value'),"6",true,true);
+
+							document.GreViewForm.complaintType.options[6] =new Option(document.getElementById('comtype8').getAttribute('value'),"8",true,true);
+
+							document.GreViewForm.complaintType.options[7] =new Option(document.getElementById('comtype9').getAttribute('value'),"9",true,true);
+
+							document.GreViewForm.complaintType.options[8] =new Option(document.getElementById('comtype20').getAttribute('value'),"20",true,true);
+
+							document.GreViewForm.complaintType.options[9] =new Option(document.getElementById('comtype35').getAttribute('value'),"35",true,true);
+
+							document.GreViewForm.complaintType.options[10] =new Option(document.getElementById('comtype36').getAttribute('value'),"36",true,true);
+
+							document.GreViewForm.complaintType.options[11] =new Option(document.getElementById('comtype38').getAttribute('value'),"38",true,true);
+
+							document.GreViewForm.complaintType.options[12] =new Option(document.getElementById('comtype39').getAttribute('value'),"39",true,true);
+
+							document.GreViewForm.complaintType.options[13] =new Option(document.getElementById('comtype40').getAttribute('value'),"40",true,true);
+
+							document.GreViewForm.complaintType.options[14] =new Option(document.getElementById('comtype94').getAttribute('value'),"94",true,true);
+
+
+			document.GreViewForm.complaintType.options[0] = new Option(document.getElementById('Choose').getAttribute('value'),0,true,true)
+
+			}
+
+
+			var temp=document.getElementById('COMPGPID6').getAttribute('value');
+			if(document.GreViewForm.compGpID.options[document.GreViewForm.compGpID.selectedIndex].text == temp)
+			{
+
+							document.GreViewForm.complaintType.options[1] =new Option(document.getElementById('comtype91').getAttribute('value'),"91",true,true);
+
+							document.GreViewForm.complaintType.options[2] =new Option(document.getElementById('comtype93').getAttribute('value'),"93",true,true);
+
+							document.GreViewForm.complaintType.options[3] =new Option(document.getElementById('comtype45').getAttribute('value'),"45",true,true);
+
+							document.GreViewForm.complaintType.options[4] =new Option(document.getElementById('comtype50').getAttribute('value'),"50",true,true);
+
+
+			document.GreViewForm.complaintType.options[0] = new Option(document.getElementById('Choose').getAttribute('value'),0,true,true)
+
+			}
+
+
+			var temp=document.getElementById('COMPGPID7').getAttribute('value');
+			if(document.GreViewForm.compGpID.options[document.GreViewForm.compGpID.selectedIndex].text == temp)
+			{
+
+							document.GreViewForm.complaintType.options[1] =new Option(document.getElementById('comtype48').getAttribute('value'),"48",true,true);
+
+
+			document.GreViewForm.complaintType.options[0] = new Option(document.getElementById('Choose').getAttribute('value'),0,true,true)
+
+			}
+
+
+			var temp=document.getElementById('COMPGPID8').getAttribute('value');
+			if(document.GreViewForm.compGpID.options[document.GreViewForm.compGpID.selectedIndex].text == temp)
+			{
+
+							document.GreViewForm.complaintType.options[1] =new Option(document.getElementById('comtype52').getAttribute('value'),"52",true,true);
+
+							document.GreViewForm.complaintType.options[2] =new Option(document.getElementById('comtype53').getAttribute('value'),"53",true,true);
+
+							document.GreViewForm.complaintType.options[3] =new Option(document.getElementById('comtype54').getAttribute('value'),"54",true,true);
+
+							document.GreViewForm.complaintType.options[4] =new Option(document.getElementById('comtype55').getAttribute('value'),"55",true,true);
+
+							document.GreViewForm.complaintType.options[5] =new Option(document.getElementById('comtype56').getAttribute('value'),"56",true,true);
+
+
+			document.GreViewForm.complaintType.options[0] = new Option(document.getElementById('Choose').getAttribute('value'),0,true,true)
+
+			}
+
+
+			var temp=document.getElementById('COMPGPID9').getAttribute('value');
+			if(document.GreViewForm.compGpID.options[document.GreViewForm.compGpID.selectedIndex].text == temp)
+			{
+
+							document.GreViewForm.complaintType.options[1] =new Option(document.getElementById('comtype47').getAttribute('value'),"47",true,true);
+
+
+			document.GreViewForm.complaintType.options[0] = new Option(document.getElementById('Choose').getAttribute('value'),0,true,true)
+
+			}
+
+
+
+}
+//to view uploaded images/videos
+function openImages(uuid){
+
+	window.open("/pgr/citizen/ViewImageVideoUpload.do?uuid="+uuid,"","height=700,width=700,scrollbars=yes,left=0,top=0,status=yes");
+	
+}
+
+function validateNotEmpty( strValue )
+{
+   var strTemp = strValue;
+   strTemp = trimAll(strTemp);
+   if(strTemp.length > 0)
+   {
+      return true;
+   }
+   return false;
+ }
+
+
+  function trimAll( strValue )
+  {
+      var objRegExp = /^(\s*)$/;
+
+      //check for all spaces
+      if(objRegExp.test(strValue))
+      {
+         strValue = strValue.replace(objRegExp, '');
+         if( strValue.length == 0)
+            return strValue;
+      }
+
+      //check for leading & trailing spaces
+      objRegExp = /^(\s*)([\W\w]*)(\b\s*$)/;
+      if(objRegExp.test(strValue))
+      {
+         //remove leading and trailing whitespace characters
+         strValue = strValue.replace(objRegExp, '$2');
+      }
+      return strValue;
+ }
+
+
+function validation()
+{
+
+
+	if(document.GreViewForm.complaintStatusID.value == "0")
+	{
+		alert(document.getElementById("alertstatus").getAttribute("value"));
+		return false;
+	}
+	
+	if(trimAll(document.GreViewForm.message1.value)==""){
+		alert("Please post the message");
+		document.GreViewForm.message1.focus();
+		return false;
+
+	}
+	if(document.getElementById("adminBndry1").value == '' || document.getElementById("adminBndry1").value == '-1' || document.getElementById("adminBndry1").value == '0'){
+		alert("Please select zone");
+		document.GreViewForm.adminBndry1.focus();
+		return false;
+	}
+	var wardlen = document.getElementById("adminBndry2").length;
+	if(parseInt(wardlen)>2)
+	{
+	if(document.getElementById("adminBndry2").value == '' || document.getElementById("adminBndry2").value == '-1' || document.getElementById("adminBndry2").value == '0'){
+		alert("Please select ward");
+		document.GreViewForm.adminBndry2.focus();
+		return false;
+	}
+	}
+	if((document.GreViewForm.complaintStatusID.value == "6") && (trimAll(document.GreViewForm.message1.value)==""))
+			{
+
+				alert("Please specify the reason for Rejection");
+				document.GreViewForm.message1.focus();
+				return false;
+	}
+
+	else if(document.GreViewForm.complaintStatusID.value == "8")
+	{
+		if(document.GreViewForm.message1.value == "")
+		{
+			alert(document.getElementById("alertwithdraw").getAttribute("value"));
+			return false;
+		}
+		else if(document.GreViewForm.message1.value != "" && (!validateNotEmpty(document.GreViewForm.message1.value)))
+		{
+			alert(document.getElementById("alertwithdraw").getAttribute("value"));
+			return false;
+		}
+
+	}
+
+	if(document.GreViewForm.departmentID != undefined)
+	{
+		if(document.GreViewForm.complaintStatusID.value != "6" && document.GreViewForm.complaintStatusID.value != "5" && document.GreViewForm.departmentID.value == "0")
+		{
+			alert("Please select Department");
+			return false;
+		}
+		if(document.GreViewForm.departmentID.value != "0" && document.GreViewForm.complaintType.value == "0")
+		{
+			alert(document.getElementById("alertcomplaintTypefordepartment").getAttribute("value"));
+			return false;
+		}
+		else if(document.GreViewForm.complaintStatusID.value == "5" && document.GreViewForm.fwdRedressalOfficerID.value != "0")
+		{
+				alert(document.getElementById("alertstatuscompleated").getAttribute("value"));
+				return false;
+		}
+		else if(document.GreViewForm.complaintStatusID.value == "6" && document.GreViewForm.fwdRedressalOfficerID.value != "0")
+		{
+				alert(document.getElementById("alertstatusrejected").getAttribute("value"));
+				return false;
+		}
+
+		else if(document.GreViewForm.complaintStatusID.value != "6"  && document.GreViewForm.complaintStatusID.value != "5")
+		{
+	   		if(document.GreViewForm.departmentID.value != "45" && document.GreViewForm.complaintType.value != "0" && document.GreViewForm.fwdRedressalOfficerID.value == "0")
+			{
+			alert(document.getElementById("alertredressalofficer").getAttribute("value"));
+			return false;
+			}
+		}
+	  if(document.GreViewForm.complaintStatusID.value=="3" && document.GreViewForm.fwdRedressalOfficerID.value == "0")
+		{
+			alert(document.getElementById("alertredressalofficer").getAttribute("value"));
+			return false;
+		}
+
+		else
+		{
+			return true;
+		}
+	}
+	return true;
+}
+
+function checkdeptzone()
+{
+	if(document.GreViewForm.zoneID.value == "0" || document.GreViewForm.departmentID.value == "0")
+	{
+		alert("please select the zone and department");
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+function setthelink()
+{
+	link ="/pgr/citizen/userID.jsp";
+	win1 =window.open(link,"Streetidwindow",'scrollbars=yes,resizable=yes,height=600,width=775,status=yes');
+	win1.moveTo(10, 10);
+	win1.focus();
+
+
+}
+
+function generateOption(fName, finalLen,userid,username,dept)
+{
+	document.forms[fName].fwdRedressalOfficerID.options[finalLen] = new Option(username,userid,true,true);
+
+
+
+}
+
+
+
+function  getSelected()
+{
+
+//displayBoundaries();
+
+}
+
+
+//this java script function added by satyam to enable and disable the noof days option for cvo //according to  their selection of whether he wants reply back or not....?
+
+
+
+function disable()
+{
+if (document.GreViewForm.wantsreplyback.value!="1" )
+{
+	document.GreViewForm.noofdaysforreply.disabled = true;
+}
+else
+{
+	document.GreViewForm.noofdaysforreply.disabled = false;
+}
+
+
+}
+function change_status()
+{
+
+	if(document.GreViewForm.fwdRedressalOfficerID.value!=0&&(document.GreViewForm.complaintStatusID.value==0||document.GreViewForm.complaintStatusID.value==2))
+	{
+		//alert("hi");
+	document.GreViewForm.complaintStatusID.value=3;
+	}
+}
+
+
+
+</script>
+
+
+
+
+
+
+<link href="/pgr/javascript/cssEnglish.css" type="text/css" rel="stylesheet">
+
+<link href="/pgr/javascript/LocalLang.css" type="text/css" rel="stylesheet">
+
+<meta content="Microsoft FrontPage 6.0" name="GENERATOR">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+</head>
+
+
+
+
+
+
+
+	<body>
+<div id="alertinternet" value="Please do not fill the Registration Number if the Mode is Internet"></div>
+
+	<div id="alertpaperform" value="Please do fill the Registration Number if the Mode is PaperForm"></div>
+
+	<div id="alertname" value="Please Fill in the Name"></div>
+
+	<div id="alertfillproperfirstname" value="Please Fill in the First Name Without spaces , Numerics or special characters"></div>
+
+	<div id="alertfillproperinitals" value="Please Fill in the Initials Name Without spaces , Numerics or special characters"></div>
+
+	<div id="alertfillproperLastname" value="Please Fill in the Last Name Without spaces , Numerics or special characters"></div>
+
+	<div id="alertadress" value="Please Fill in the Address"></div>
+
+	<div id="alertpincode" value="Please Fill in the PinCode With six digit format"></div>
+
+	<div id="alerttelephone" value="Please Fill in the Telephone with proper format"></div>
+
+	<div id="alertemail" value="Please Enter complainantEmail in properformat"></div>
+
+	<div id="alertcomplainttype" value="Please choose a Complaint Type"></div>
+
+	<div id="alertbothcomplaintandother" value="Please do not choose both ComplaintType and othercomplaintType"></div>
+
+	<div id="alertdonotothercomplainttype" value="Please do not fill the other complainttype"></div>
+
+	<div id="alertdoothercomplainttype" value="Please fill the other complainttype"></div>
+
+	<div id="alertfillemailifreq" value="Please fill your E-mail address if u have choosen the  Email Notification Preferences"></div>
+
+	<div id="alertcomplainttitle" value="Please enter complaint Title"></div>
+
+	<div id="alertlocation" value="Please Enter complaint Location"></div>
+
+	<div id="alertdetails" value="Please enter complaint details"></div>
+
+	<div id="alert50chars" value="Please Fill in the Name less than 50 charecters"></div>
+
+	<div id="alert100chars" value="Please Fill in the title less than 100 charecters"></div>
+
+	<div id="alertstatus" value="Please select the Status"></div>
+
+	<div id="alertwithdraw" value="Please specify the reason for selecting the status to withdraw"></div>
+
+	<div id="alertcomplaintTypefordepartment" value="Please select the complaint type for the selected Complaint Group"></div>
+
+	<div id="alertstatuscompleated" value="please dont forward the complaint when the status is Completed"></div>
+
+	<div id="alertusername" value="Please Fill in the userName"></div>
+
+	<div id="alertoldpsswrd" value="please Fill in the oldPassword"></div>
+
+	<div id="alertnewpsswrd" value="Please Fill in the newPassword"></div>
+
+	<div id="alertcnfnewpsswrd" value="Please Fill in the cnfNewPassword"></div>
+
+	<div id="alertcriterias" value="Please select at least one of the above criterias"></div>
+
+	<div id="alertAllDatesorCurrent" value="Please dont fill the parameters if date selection is All Dates or Current"></div>
+
+	<div id="alertdateparameters" value="Please fill the date parameters according to the instructions given below"></div>
+
+	<div id="alertselectblock" value="Please select a Block"></div>
+
+	<div id="alertfillinanything" value="Please dont submit without filling anything"></div>
+
+	<div id="alert400chars" value="Please fill in the Complaint Details less than 400 Characters"></div>
+
+	<div id="alert200compaddress" value="Please fill in the Complainant Address less than 200 Characters"></div>
+
+	<div id="alertplease" value="Please fill in the "></div>
+
+	<div id="alert15chars" value="less than 15 Characters"></div>
+
+	<div id="alert30chars" value="less than 30 Characters"></div>
+
+	<div id="alert200chars" value="less than 200 Characters"></div>
+
+	<div id="alertnotsame" value="Confirm New Password Value is not same as New Password Value"></div>
+
+	<div id="alertSpecialChars" value="Special Characters are not allowed. Please remove them."></div>
+
+	<div id="alertphoneform" value="Please do fill the Registration Number if the Mode is PhoneForm"></div>
+
+	<div id="alertOpenHouseComplform" value="Please do fill the Registration Number if the Mode is Open House Complaints"></div>
+
+	<div id="alertstatusrejected" value="please dont forward the complaint when the status is Rejected"></div>
+
+	<div id="alertredressalofficer" value="Please select Redressal Officer for the Complaint"></div>
+
+	<div id="alertinvalidredressalofficer" value="Invalid Redresal Officer : please select valid Redresal Officer  "></div>
+
+	<div id="alertSelectCompRecv" value="Please select complaint receiving center."></div>
+
+	<div id="alertlocbndrymandatory" value="Area, Locality and Street are Mandatory."></div>
+
+	<div id="sizeismorethentwomb" value="Size of Uploaded File should be less then 2 MB "></div>
+
+	<div id="exefilecannotbeuploaded" value="Selected File Doesn" t support upload. only supported file types for image or video can be uploaded.></div>
+
+	<div id="alertMobileNumMandatory" value="Please Enter Mobile Number."></div>
+
+		<div id="COMPGPID1" value="Health"></div>
+
+
+	
+		<div id="comtype23" value="Slaughter House"></div>
+
+
+	
+		<div id="comtype41" value="Flies menace at Kodungaiyur Dumping Ground"></div>
+
+
+	
+		<div id="comtype42" value="Flies menace at Perungudi Dumping Ground"></div>
+
+
+	
+		<div id="comtype24" value="Unauthorised sale of meat and meat product"></div>
+
+
+	
+		<div id="comtype25" value="Stray cattle"></div>
+
+
+	
+		<div id="comtype26" value="Complaints regarding  Cleanliness of Toilets in Theatre"></div>
+
+
+	
+		<div id="comtype21" value="Issue of Birth and Death Certificate"></div>
+
+
+	
+		<div id="comtype22" value="Unsanitary conditions on the road"></div>
+
+
+	
+		<div id="comtype17" value="Public Health/Dengue/Malaria/Gastro-enteritis"></div>
+
+
+	
+		<div id="comtype16" value="Complaints regarding CDH"></div>
+
+
+	
+		<div id="comtype19" value="Dog menace "></div>
+
+
+	
+		<div id="comtype18" value="Mosquito menace "></div>
+
+
+	
+		<div id="comtype14" value="Complaints regarding  Dispensary "></div>
+
+
+	
+		<div id="comtype32" value="Road Side Eateries"></div>
+
+
+	
+		<div id="comtype15" value="Complaints regarding CWC"></div>
+
+
+	
+		<div id="comtype33" value="Unhygienic and improper transport of meat and livestock"></div>
+
+
+	
+		<div id="comtype12" value="Complaints regarding public toilets"></div>
+
+
+	
+		<div id="comtype30" value="Stray Pigs"></div>
+
+
+	
+		<div id="comtype13" value="Complaints regarding unauthorised restaurants"></div>
+
+
+	
+		<div id="comtype31" value="Death of Stray Animals"></div>
+
+
+	
+		<div id="comtype11" value="Complaints regarding burial ground"></div>
+
+
+	
+		<div id="comtype37" value="Transfer Station Smell"></div>
+
+
+	
+		<div id="comtype34" value="Improper Sweeping"></div>
+
+
+	
+		<div id="comtype29" value="Illegal slaughtering"></div>
+
+
+	
+		<div id="comtype28" value="Complaints regarding quality of food in Hotels"></div>
+
+
+	
+		<div id="comtype27" value="Complaints regarding  Cleanliness of Toilets in Shopping complex"></div>
+
+
+	
+		<div id="COMPGPID2" value="General"></div>
+
+
+	
+		<div id="comtype92" value="Change of address in Electoral Roll"></div>
+
+
+	
+		<div id="comtype51" value="Unauthorised Advt. Boards"></div>
+
+
+	
+		<div id="COMPGPID3" value="Engineering"></div>
+
+
+	
+		<div id="comtype49" value="Issue of Colour TV"></div>
+
+
+	
+		<div id="comtype79" value="Complaints regarding Play grounds"></div>
+
+
+	
+		<div id="comtype78" value="Complaints regarding Park"></div>
+
+
+	
+		<div id="comtype90" value="Over head cable Wires running in Hapazard manner"></div>
+
+
+	
+		<div id="comtype75" value="Encroachment on the public property"></div>
+
+
+	
+		<div id="comtype57" value="Request to relay the Road"></div>
+
+
+	
+		<div id="comtype74" value="Violation of DCR/Building bye laws"></div>
+
+
+	
+		<div id="comtype77" value="Complaints regarding community hall"></div>
+
+
+	
+		<div id="comtype59" value="Formation of New Road"></div>
+
+
+	
+		<div id="comtype76" value="Illegal draining of sewage to SWD/Open site"></div>
+
+
+	
+		<div id="comtype58" value="Pot hole fill up/Repairs to the damage surface"></div>
+
+
+	
+		<div id="comtype71" value="Removal of fallen trees"></div>
+
+
+	
+		<div id="comtype70" value="Disposal of removed silt on the Road"></div>
+
+
+	
+		<div id="comtype73" value="Unauthorised / Illegal construction"></div>
+
+
+	
+		<div id="comtype72" value="Covering of Man holes of SWD"></div>
+
+
+	
+		<div id="comtype10" value="Obstruction of Trees"></div>
+
+
+	
+		<div id="comtype66" value="Desilting of Canal"></div>
+
+
+	
+		<div id="comtype65" value="Desilting of Drain"></div>
+
+
+	
+		<div id="comtype7" value="Removal of Debris"></div>
+
+
+	
+		<div id="comtype64" value="Repairs to the SWD"></div>
+
+
+	
+		<div id="comtype89" value="Building plan sanction"></div>
+
+
+	
+		<div id="comtype63" value="New Drain Construction"></div>
+
+
+	
+		<div id="comtype88" value="Poor quality of work"></div>
+
+
+	
+		<div id="comtype69" value="Stagnation of water"></div>
+
+
+	
+		<div id="comtype87" value="Slow progress of work"></div>
+
+
+	
+		<div id="comtype3" value="Shifting of garbage bin"></div>
+
+
+	
+		<div id="comtype86" value="Parking Issue"></div>
+
+
+	
+		<div id="comtype68" value="Cleaning of water table"></div>
+
+
+	
+		<div id="comtype85" value="Open Air Defunction"></div>
+
+
+	
+		<div id="comtype67" value="Obstruction of water flow"></div>
+
+
+	
+		<div id="comtype84" value="Unauthorised tree Cutting"></div>
+
+
+	
+		<div id="comtype83" value="Complaints regarding Traffic Island"></div>
+
+
+	
+		<div id="comtype82" value="Complaints regarding Centre Median"></div>
+
+
+	
+		<div id="comtype81" value="Complaints regarding Bridges/Flyovers/Subways"></div>
+
+
+	
+		<div id="comtype80" value="Complaints regarding any other COC Buildings"></div>
+
+
+	
+		<div id="comtype62" value="Removal of shops in the footpath"></div>
+
+
+	
+		<div id="comtype61" value="Repairs to existing footpath"></div>
+
+
+	
+		<div id="comtype60" value="Request to provide footpath"></div>
+
+
+	
+		<div id="COMPGPID4" value="Revenue"></div>
+
+
+	
+		<div id="comtype43" value="Complaints related to property tax "></div>
+
+
+	
+		<div id="comtype44" value="Complaints related to issue of all types of license "></div>
+
+
+	
+		<div id="comtype46" value="Inclusion, delection of correction in the Voter list"></div>
+
+
+	
+		<div id="COMPGPID5" value="Solid Waste Management"></div>
+
+
+	
+		<div id="comtype36" value="Garbage lorry with out Net"></div>
+
+
+	
+		<div id="comtype20" value="Burning of garbage"></div>
+
+
+	
+		<div id="comtype35" value="Broken Bin"></div>
+
+
+	
+		<div id="comtype40" value="Burning of garbage at Perungudi Dumping Ground"></div>
+
+
+	
+		<div id="comtype9" value="Bio Medical waste/Health hazard waste removal"></div>
+
+
+	
+		<div id="comtype8" value="Nuisance by garbage tractors or trucks"></div>
+
+
+	
+		<div id="comtype5" value="Absenteesim of sweepers"></div>
+
+
+	
+		<div id="comtype6" value="Absenteesim of door to door garbage collector"></div>
+
+
+	
+		<div id="comtype94" value="Complaints regarding Free usage of Public Toilet"></div>
+
+
+	
+		<div id="comtype4" value="Provision of garbage bin"></div>
+
+
+	
+		<div id="comtype1" value="Removal of garbage"></div>
+
+
+	
+		<div id="comtype39" value="Burning of garbage at Kodungaiyur Dumping Ground"></div>
+
+
+	
+		<div id="comtype2" value="Over flowing of garbage bins "></div>
+
+
+	
+		<div id="comtype38" value="Spilling of Garbage from lorry"></div>
+
+
+	
+		<div id="COMPGPID6" value="Election"></div>
+
+
+	
+		<div id="comtype91" value="Name not found in Electoral Roll"></div>
+
+
+	
+		<div id="comtype45" value="Complaints regarding Voter list"></div>
+
+
+	
+		<div id="comtype93" value="Name Error (Spelling Related)"></div>
+
+
+	
+		<div id="comtype50" value="Issue of Voter ID"></div>
+
+
+	
+		<div id="COMPGPID7" value="Family Welfare"></div>
+
+
+	
+		<div id="comtype48" value="Sanction of financial assistance under Moovalur thirumana thittam"></div>
+
+
+	
+		<div id="COMPGPID8" value="Electrical"></div>
+
+
+	
+		<div id="comtype53" value="Shifting of Street light Pole"></div>
+
+
+	
+		<div id="comtype52" value="Non Burning of Street Lights"></div>
+
+
+	
+		<div id="comtype55" value="Electric Shock due to street light"></div>
+
+
+	
+		<div id="comtype54" value="New Street light"></div>
+
+
+	
+		<div id="comtype56" value="Damage to the  Electric Pole"></div>
+
+
+	
+		<div id="COMPGPID9" value="Education"></div>
+
+
+	
+		<div id="comtype47" value="Complaints regarding Schools"></div>
+
+
+	
+<div id="Choose" value="Choose"></div>
+
+
+
+
+
+<form name="GreViewForm" method="post" action="/pgr/citizen/GreView.do;jsessionid=F98CFC37E1B225242745B55C7A7A7FFC.node3" enctype="multipart/form-data" onsubmit="return validation();">
+
+<div align="center">
+	<table cellspacing="0" width="753" border="0" bgcolor="#FFFFFF" cellpadding="0">
+  <tr>
+      <td align="left" colspan="5" height="21">
+		<!-- MSCellFormattingTableID="1" -->
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" height="44">
+			<tr>
+				<!-- MSCellFormattingType="content" -->
+				<td width="755" height="40" align="left" valign="bottom" bgcolor="#FFFFFF">
+                <font face="Arial, Helvetica"><img height="20" alt="" src="/pgr/images/UI_05_top.gif" width="754" align="top"></font> </td>
+
+			</tr>
+		</table>
+      </td>
+    </tr>
+	
+
+
+
+		<tr>
+		<td bgcolor="#FFFFFF" width="2"> </td>
+		
+		<td valign="center" align="right" bgcolor="#efefef" width="107">
+		<p align="center">
+		
+		<a id="imaID" name="imaID" alt="Greater Chennai Corporation" href="http://210.212.62.123:8090/pgr/"></a><img src="/pgr/images/chennaicmc-headerLeftLogo.jpg" border="0" width="90" height="92" id="logoID">
+		
+		</p>
+</td>
+		
+
+		<td bgcolor="#efefef" width="500" align="center">
+		<font size="6" id="header_font"><br>
+		Greater Chennai Corporation</font>
+		</td>
+
+		
+		<td align="middle" bgcolor="#efefef" width="124">
+		<a id="orgID" name="orgID" href="//www.egovernments.org"><img src="/pgr/images/egovlogo-pwr-trans.gif" border="0" width="90" height="92" id="logoID"> </a>
+</td>
+		<td bgcolor="#FFFFFF" height="102" width="1"> </td>
+
+		
+		</tr>
+
+	<tr>
+      <td valign="center" align="left" colspan="5" height="25">
+		<!-- MSCellFormattingTableID="2" -->
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" height="25">
+			<tr>
+				<!-- MSCellFormattingType="content" -->
+				<td width="756" height="25" align="left" valign="top" bgcolor="#FFFFFF">
+        <font face="Arial, Helvetica">
+          <img height="20" alt="" src="/pgr/images/UI_05.gif" width="754" align="absmiddle">
+        </font>
+      			</td>
+			</tr>
+		</table>
+      </td>
+    </tr>
+</table>
+
+</div>
+
+<table align="center" height="30" cellspacing="0" cellpadding="0" width="749" summary="" border="0">
+  <tbody>
+  <tr>
+        <td height="5" width="762">
+        
+         <p align="center"><b><font id="welcome_font">Citizen<span id="headerusername">
+                </span></font><font face="Verdana" size="1">                                                                                                                                                       </font></b><font size="2">
+
+          
+    </font></p>
+</td>
+</tr>
+  <tr>
+    <td width="746"><font face="Arial, Helvetica"><img height="18" alt="" src="/pgr/images/UI_05_top.gif" width="760"></font></td>
+  </tr>
+  </tbody>
+</table>
+<table align="center" cellspacing="0" bordercolordark="#000000" cellpadding="1" width="741" bgcolor="#eecccc" summary="" border="1">
+  <tbody>
+    <tr>
+      <td width="750">
+        <table cellspacing="0" bordercolordark="#ffffff" width="750" bgcolor="#efefef" summary="" bordercolorlight="#aaaaaa" border="1">
+	      <tbody>
+	        <tr>
+              <td align="middle" width="736">
+                <table cellspacing="0" bordercolordark="#ffffff" cellpadding="3" width="736" bgcolor="#efefef" summary="" bordercolorlight="#aaaaaa" border="0">
+		          <tr>
+					<td width="736" height="19">
+						
+
+
+ 
+<link href="/pgr/javascript/cssEnglish.css" type="text/css" rel="stylesheet">
+
+<link href="/pgr/javascript/LocalLang.css" type="text/css" rel="stylesheet">
+
+<div align="center">
+<table cellspacing="0" cellpadding="3" border="0" bordercolordark="#000000" width="200" summary="">
+<tr id="roowid" name="roowid">
+
+			<td width="48" id='height="40"'>
+			<p align="left">
+			<a href="/pgr/indexpgr.jsp#complaintNo"><font id="normal_color0000FF">CheckStatus</font></a>
+			</p>
+</td>
+			<td width="47" id="button2" height="40">
+			<p align="center">
+			<a href="/pgr/citizen/BeforeReg.do;jsessionid=F98CFC37E1B225242745B55C7A7A7FFC.node3"><font id="normal_color0000FF">RegisterComplaints</font></a>
+			</p>
+</td>
+
+
+
+		
+            </tr>
+   </table>
+</div>
+
+
+					</td>
+				  </tr>
+                </table>
+        </td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<center>
+
+
+<input type="hidden" name="compID" value="417248" id="hiddenCompID">
+<input type="hidden" name="redressalId" value="2084" id="hiddenredressalId">
+<div align="center">
+<table bgcolor="#eecccc" border="1" bordercolordark="#000000" cellspacing="0" id="PoTable1" width="746" cellpadding="3">
+ <tr>
+          <td align="middle" bgcolor="#EFEFEF" height="37" width="750">
+            <p align="center"><strong style="font-weight: 400">
+			<em style="font-style: normal"> <font id="LocalLang_Heading"></font><font id="heading_form">
+
+            </font> </em></strong><font id="heading_form">
+			<strong style="font-weight: 400">Complaint
+			Details</strong></font></p>
+    </td>
+  </tr>
+<tr>
+    <td width="750">
+<font face="Arial, Helvetica"><img alt="" border="0" height="5" src="/pgr/images/spacer.gif" width="2"></font><table bgcolor="#efefef" border="1" bordercolordark="#FFFFFF" bordercolorlight="#AAAAAA" cellpadding="3" cellspacing="0" width="736" summary="" height="194">
+	 <tr>
+          <td align="middle" bgcolor="#dddddd" colspan="4" height="29" width="716">
+            <p align="left"><strong style="font-weight: 400">
+			<em style="font-style: normal">
+            <b><font id="LocalLang_form">
+            </font></b> </em></strong>
+            <em style="font-style: normal"><strong style="font-weight: 400"><font id="form_main">Complaining
+            Person's Details</font></strong></em></p>
+          </td>
+	 </tr>
+        <tr id="persondetailrow">
+          <td width="140" height="30">
+			<font id="LocalLang_size10ptPink"></font>
+            <font id="normal_colorRed">Complaint Number</font>
+			</td>
+		<td width="578" height="30" id="complaint" colspan="3"><font id="normal_colorBlue">669GBM</font></td>
+        </tr>
+        <tr>
+          <td width="140" height="28" id="Date" align="left"><font id="normal_colorRed">
+          <font id="LocalLang_size10ptPink"></font>Complaint Date</font></td>
+		            <td width="578" height="28" colspan="3" id="regstdate"><font id="normal_colorBlue">Sat, 3 Dec 2016 12:25 PM </font></td>
+        </tr>
+        <tr id="nameRow">
+          <td width="140" height="33" id="Text">
+			<font id="normal_colorRed"><font id="LocalLang_size10ptPink"></font> Complainant's Name</font>
+</td>
+		            <td width="230" height="33" id="name">
+					<font id="normal_colorBlue">Bragadeesh  </font>
+</td>
+		            <td width="126" height="33" id="email">
+					  <font id="LocalLang_size10ptPink">
+             </font>
+					  <font id="normal_colorRed">Complainant's Email </font> </td>
+		            <td width="206" height="33" id="mail">
+					<font id="normal_colorBlue">jbragadeesh@gmail.com</font>
+</td>
+        </tr>
+        <tr>
+          <td width="140" height="33" align="left">
+           <font id="normal_colorRed"><font id="LocalLang_size10ptPink"></font>Complainant's Address</font>
+</td>
+          <td width="230" height="33" id="address"><font id="normal_colorBlue">S2Block2, Srinivas Apartment, Ponnusamy Street Ullagaram, Chennai</font></td>
+          <td width="126" height="33" id="pin">
+			<font id="LocalLang_size10ptPink"> </font><font id="normal_colorRed">
+			PinCode</font>
+</td>
+          <td width="206" height="33" id="pincode"><font id="normal_colorBlue">600091</font></td>
+        </tr>
+
+        <tr>
+          <td width="140" height="34">
+          <font id="LocalLang_size10ptPink">
+			</font> <font id="normal_colorRed">Phone Number</font>
+</td>
+          <td width="230" height="34" id="phone"><font id="normal_colorBlue">9884711171</font></td>
+          <td width="126" height="34">
+			<font id="LocalLang_size10ptPink">
+          </font> <font id="normal_colorRed">Mobile Number</font>
+</td>
+          <td width="206" height="34" id="mobile"><font id="normal_colorBlue">9884711171</font></td>
+        </tr>
+
+
+
+        </table>
+</td>
+</tr>
+
+  <tr>
+    <td width="750">
+<font face="Arial, Helvetica"><img alt="" border="0" height="5" src="/pgr/images/spacer.gif" width="2"></font><table bgcolor="#efefef" border="1" bordercolordark="#FFFFFF" bordercolorlight="#AAAAAA" cellpadding="3" cellspacing="0" width="738" summary="">
+
+        <tr>
+          <td align="middle" bgcolor="#dddddd" colspan="5" height="22" width="718">
+            <p align="left"><strong style="font-weight: 400">
+			<em style="font-style: normal">
+            <b><font id="LocalLang_form">
+            </font></b></em></strong>
+            <em style="font-style: normal"><strong style="font-weight: 400"><font id="form_main">Complaint
+            Details</font></strong></em></p>
+          </td>
+        </tr>
+        <tr>
+          <td width="205" height="23">
+          <font id="LocalLang_size10ptPink"></font>
+	  <font id="normal_colorRed"></font><font size="4"><b> </b></font>
+          <font id="normal_colorRed">Complaint
+            Dept<b>.</b></font>
+</td>
+            <td width="180" height="23" id="dept">
+
+
+	          <font id="normal_colorBlue">Np-perungudi </font>
+
+          </td>
+          <td width="180" height="23" colspan="2">
+            <p align="left"><font id="LocalLang_size10ptPink"></font>
+            <font id="normal_colorRed">Complaint Location</font></p>
+</td>
+          <td width="152" height="23" id="ward">
+
+	          <font id="normal_colorBlue">Area-ullagaram/locality-perumal Nagar/street-perumal Nagar 3rd Street </font>
+
+         </td>
+        </tr>
+        <tr>
+          <td width="205" height="23">
+			<font id="LocalLang_size10ptPink">
+          </font>
+	   <font id="normal_colorRed">Complaint
+            Type</font>
+</td>
+          <td width="284" height="23" colspan="2" id="complnttype"><font id="normal_colorBlue">
+			Request to relay the Road</font></td>
+          <td width="142" height="23">
+          <font id="LocalLang_size10ptPink"></font><font id="LocalLang_size12ptPink"> </font><font id="normal_colorRed">Viewed
+            By</font>
+</td>
+          <td width="141" height="23" id="view" align="left"><font id="normal_colorBlue">AEDN168</font></td>
+        </tr>
+        <tr>
+          <td width="205" height="23">
+<font id="LocalLang_size10ptPink"></font><font id="normal_colorRed"> Complaint
+            Title</font>
+</td>
+
+          <td width="567" height="23" colspan="4" id="comptitle"><font id="normal_colorBlue">Request to relay the Road</font></td>
+        </tr>
+		<tr>
+		  <td width="205">
+<font id="LocalLang_size10ptPink"></font><font id="normal_colorRed">Complaint Specific
+			Location</font>
+</td>
+		  <td width="567" colspan="4" id="location"><font id="normal_colorBlue">N/A</font></td>
+		</tr>
+		<tr>
+		          <td width="205" height="23">
+			   <font id="normal_colorRed">Complaint
+		            Mode</font>
+</td>
+		            
+		          <td width="284" height="23" colspan="2" id="complaintmode"><font id="normal_colorBlue">
+					Internet </font></td>
+		          <td width="142" height="23">
+		          <font id="normal_colorRed">Receiving
+		            Center</font>
+</td>
+		            
+		          <td width="141" height="23" id="view" align="left"><font id="normal_colorBlue">Complaint Cell</font></td>
+        </tr>
+		
+				<tr>
+				  <td width="205">
+<font id="LocalLang_size10ptPink"></font><font id="normal_colorRed">Expiry
+					Date</font>
+</td>
+				  <td width="567" colspan="4" id="location"><font id="normal_colorBlue">Mon, 2 Jan 2017 12:25 PM</font></td>
+				</tr>
+				
+
+
+        <tr>
+          <td width="205">
+<font id="LocalLang_size10ptPink"></font>
+          <font id="normal_colorRed">Details
+            of Complaint</font>
+</td>
+          <td width="567" colspan="4" id="description">
+			<font id="normal_colorBlue">After finishing the drainage work, the road has been horribly closed for namesake. It is very difficult to travel on this every day. Please see the attached picture on how bad the finishing is. Very difficult for the kids to walk here.</font>
+</td>
+        </tr>
+
+        
+        </table>
+</td>
+</tr>
+
+  <tr>
+    <td width="750">
+<font face="Arial, Helvetica"><img alt="" border="0" height="5" src="/pgr/images/spacer.gif" width="2"></font><table bgcolor="#efefef" border="1" bordercolordark="#FFFFFF" bordercolorlight="#AAAAAA" cellpadding="3" cellspacing="0" width="737" summary="" id="masterTable">
+        <tr>
+          <td align="middle" bgcolor="#dddddd" height="22" width="717" id="messid">
+            <p align="left"><strong style="font-weight: 400">
+			<em style="font-style: normal">
+            <b><font id="LocalLang_form"></font></b></em></strong>
+            <em style="font-style: normal"><strong style="font-weight: 400"><font id="form_main"> Complaint
+            Messages</font></strong></em></p>
+          </td>
+        </tr>
+
+
+							<tr id="rowid">
+							<td width="719" bgcolor="#FFFFFF" id="tableid"><font id="comp_heading_font">
+							<table border="0" width="100%" cellspacing="0" cellpadding="0">
+							<tr>
+							<td><font id="comp_heading_font"><span id="user" color="#993366">Aedn169   Says</span> :</font></td>
+							<td><p align="right"><font id="comp_heading_font"> <span id="compdate">Mon, 5 Dec 2016 10:45 AM</span></font></p></td>
+							</tr>
+							</table>
+							                                                      <br> 
+							<font id="comp_msg_font"><span id="message"><i>Forwarded To AEDN168  , FORWARDED.</i></span></font>
+							</font></td>
+							</tr>
+
+
+
+							<tr id="rowid">
+							<td width="719" bgcolor="#CCFF99" id="tableid"><font id="comp_heading_font">
+							<table border="0" width="100%" cellspacing="0" cellpadding="0">
+							<tr>
+							<td><font id="comp_heading_font"><span id="user" color="#993366">Aedn168   Says</span> :</font></td>
+							<td><p align="right"><font id="comp_heading_font"> <span id="compdate">Thu, 8 Dec 2016 02:40 PM</span></font></p></td>
+							</tr>
+							</table>
+							                                                      <br> 
+							<font id="comp_msg_font"><span id="message"><i>SIR THE PATCH WORK WILL BE COMMENCED WITH IN 10 DAYS
+THIS IS FOR YOUR KIND INFORMATION</i></span></font>
+							</font></td>
+							</tr>
+
+
+
+
+	</table>
+</td>
+</tr>
+
+
+  <tr>
+    <td width="750">
+<font face="Arial, Helvetica"><img alt="" border="0" height="5" src="/pgr/images/spacer.gif" width="2"></font><table bgcolor="#efefef" border="1" bordercolordark="#FFFFFF" bordercolorlight="#AAAAAA" cellpadding="3" cellspacing="0" width="737" summary="" height="194">
+
+
+
+        <tr id="otheroptions">
+          <td align="middle" bgcolor="#dddddd" colspan="2" height="29" width="757">
+            <p align="left"><em style="font-style: normal">
+			<strong style="font-weight: 400"> <b><font id="LocalLang_form">
+            </font></b><font id="form_main"> Other Options</font></strong></em></p>
+          </td>
+        </tr>
+      
+        <tr id="statuses">
+		     <td width="179" height="15" id="changestatus">
+	              <font id="LocalLang_size10ptPink"></font><font id="normal_colorRed">Change Status</font>
+</td>
+		          <td width="540" height="15" id="status" name="status">
+
+				<select name="complaintStatusID"><option value="0">Choose</option>
+				              
+					      
+					      <option value="9">REOPENED</option>
+
+					      
+					      
+					      <option value="10" selected>CLOSE</option></select>
+
+
+  
+
+
+
+        </td>
+        </tr>
+		
+<input type="hidden" name="priyorityid" id="priyorityid" value="0">
+
+ 
+		     <tr>
+		     
+		          <td width="127" height="17"><font id="LocalLang_size10pt">
+					<font id="normal_colorRed">View Photograph/Video Uploaded By Citizen 
+		             </font> </font></td>
+		             
+		             
+		          <td height="17" width="482">	          
+		            <a onclick="openImages('5a8f6619-35cb-458d-af05-965d46e9dc21')"><font id="normal_colorBlueUnderline">Click here to see Image/Video</font></a>
+		  
+		         </td>
+</tr>
+		     
+       
+        	
+	        <tr>
+	          <td width="127" height="117">
+<font id="LocalLang_size10pt">
+	           </font><font id="normal_font"><font id="normal_colorRed">Upload Photograph</font>
+	             </font> </td>
+	          <td height="117" width="597">
+	
+				<input type="file" name="image" value=""> </td>
+	        </tr>
+        
+
+	
+	<tr id="messages">
+	          <td width="179" height="28">
+	            <font id="normal_colorRed"><font id="LocalLang_size10ptPink"> </font><font id="normal_colorRed">Post Message</font><b> <br>
+				</b><font size="1">(will be appended to the complaint)</font></font>
+</td>
+	          <td width="540" height="29">
+				<textarea name="message1" cols="64" rows="5"></textarea>
+</td>
+        </tr>
+
+
+        </table>
+</td>
+</tr>
+        <td width="750">
+
+      <table bgcolor="#efefef" border="1" bordercolordark="#ffffff" bordercolorlight="#aaaaaa" cellspacing="0" height="35" width="100%" summary="">
+
+	<tr id="submitid">
+			<td align="middle">
+			<p align="center"><font face="Arial, Helvetica"><input type="submit" value="Submit"></font></p>
+		</td>
+</tr>
+
+
+          </table> </td>
+</table>
+ 
+
+</div>
+
+<div align="center">
+<table cellspacing="0" cellpadding="0" width="749" summary="" border="0">
+  <tr>
+      <td width="909">
+        <p align="center">
+          <font face="Arial, Helvetica">
+           <img height="19" alt="" src="/pgr/images/UI_05.gif" width="761" align="left"></font></p>
+           </td>
+     	</tr>
+</table>
+
+</div>
+
+<p>
+  </p>
+<hr width="754">
+  
+
+ 
+<link href="/pgr/javascript/cssEnglish.css" type="text/css" rel="stylesheet">
+
+<link href="/pgr/javascript/LocalLang.css" type="text/css" rel="stylesheet">
+
+
+
+<div align="center">
+<table cellspacing="0" cellpadding="3" border="0" bordercolordark="#000000" width="200" summary="">
+
+<tr id="roowid" name="roowid">
+
+			<td width="48" id='height="40"'>
+			<p align="left">
+			<a href="/pgr/indexpgr.jsp;jsessionid=F98CFC37E1B225242745B55C7A7A7FFC.node3#ComplaintNo"><font id="normal_color0000FF">CheckStatus</font></a>
+			</p>
+</td>
+			<td width="47" id="button2" height="40">
+			<p align="center">
+			<a href="/pgr/citizen/BeforeReg.do;jsessionid=F98CFC37E1B225242745B55C7A7A7FFC.node3"><font id="normal_color0000FF">RegisterComplaints</font></a>
+			</p>
+</td>
+
+
+		
+            </tr>
+   </table>
+</div>
+
+
+    
+
+    </center>
+</form>
+ 
+
+       </body>
+</html>
