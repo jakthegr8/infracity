@@ -1,0 +1,2 @@
+json.extract! profile, :id, :user_id, :name, :email, :contact_number1, :contact_number2, :address1, :address2, :profile_image_path, :created_at, :updated_at
+json.url profile_url(profile, format: :json)

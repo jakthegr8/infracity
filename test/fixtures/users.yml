@@ -1,0 +1,13 @@
+w001:
+  name: MyString
+  password: MyString
+  email: ward001@chennaicorporation.gov.in
+  users_roles_map: one
+  users_roles_map_type: Users roles map
+
+w002:
+  name: MyString
+  password: MyString
+  email: ward002@chennaicorporation.gov.in
+  users_roles_map: two
+  users_roles_map_type: Users roles map

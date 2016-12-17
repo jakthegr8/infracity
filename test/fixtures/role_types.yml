@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  is_default: false
+  users_roles_map: one
+  users_roles_map_type: Users roles map
+
+two:
+  name: MyString
+  is_default: false
+  users_roles_map: two
+  users_roles_map_type: Users roles map

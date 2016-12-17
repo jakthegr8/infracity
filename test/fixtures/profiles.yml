@@ -1,0 +1,20 @@
+#https://en.wikipedia.org/wiki/List_of_Chennai_Corporation_zones
+w001:
+  user: w001
+  name: A.Ezilarasi
+  email: ward001@chennaicorporation.gov.in
+  contact_number1: 9445467001
+  contact_number2: 
+  address1: 48, 4th Street, Nettukuppam,Ennur
+  address2: 
+  profile_image_path: MyString
+
+w002:
+  user: w002
+  name: C.Selvam
+  email: ward002@chennaicorporation.gov.in
+  contact_number1: 9445467002
+  contact_number2: 
+  address1: 34, Ellaiamman Koil Street,Ennur
+  address2: 
+  profile_image_path: MyString
