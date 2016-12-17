@@ -11,7 +11,6 @@ class ProfileDashboard < Administrate::BaseDashboard
     user: Field::BelongsTo,
     id: Field::Number,
     name: Field::String,
-    email: Field::String,
     contact_number1: Field::String,
     contact_number2: Field::String,
     address1: Field::Text,
@@ -30,7 +29,7 @@ class ProfileDashboard < Administrate::BaseDashboard
     :user,
     :id,
     :name,
-    :email,
+    :contact_number1,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -39,7 +38,6 @@ class ProfileDashboard < Administrate::BaseDashboard
     :user,
     :id,
     :name,
-    :email,
     :contact_number1,
     :contact_number2,
     :address1,
@@ -55,7 +53,6 @@ class ProfileDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :user,
     :name,
-    :email,
     :contact_number1,
     :contact_number2,
     :address1,
