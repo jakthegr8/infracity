@@ -1,0 +1,86 @@
+#https://en.wikipedia.org/wiki/List_of_Chennai_Corporation_zones
+
+
+Tiruvottiyur:
+  name: Tiruvottiyur
+  latitude: ''
+  longitude: ''
+  district: Tiruvallur
+
+Tiruvottiyur/Madhavaram/Ponneri:
+  name: 'Tiruvottiyur/Madhavaram/Ponneri'
+  latitude: ''
+  longitude: ''
+  district: Tiruvallur
+
+Madhavaram:
+  name: Madhavaram
+  latitude: ''
+  longitude: ''
+  district: Tiruvallur
+
+Tondiarpet:
+  name: Tondiarpet
+  latitude: ''
+  longitude: ''
+  district: Chennai
+
+Egmore/Purasaiwalkam:
+  name: Egmore/Purasaiwalkam
+  latitude: ''
+  longitude: ''
+  district: Chennai
+
+Perambur/Ayanavaram/Purasaiwalkam:
+  name: Perambur/Ayanavaram/Purasaiwalkam
+  latitude: ''
+  longitude: ''
+  district: Chennai
+
+Ambattur:
+  name: Ambattur
+  latitude: ''
+  longitude: ''
+  district: Tiruvallur
+
+Ayanavaram/Aminjikarai:
+  name: Ayanavaram/Aminjikarai
+  latitude: ''
+  longitude: ''
+  district: Chennai
+
+Mylapore/Egmore:
+  name: Mylapore/Egmore
+  latitude: ''
+  longitude: ''
+  district: Chennai
+
+Mambalam/Guindy/Egmore:
+  name: Mambalam/Guindy/Egmore
+  latitude: ''
+  longitude: ''
+  district: Chennai
+
+Maduravoyal/Alandur:
+  name: Maduravoyal/Alandur
+  latitude: ''
+  longitude: ''
+  district: Tiruvallur/Kancheepuram
+
+Alandur:
+  name: Alandur
+  latitude: ''
+  longitude: ''
+  district: Kancheepuram
+
+Mylapore/Velachery:
+  name: Mylapore/Velachery
+  latitude: ''
+  longitude: ''
+  district: Chennai
+
+Sholinganallur:
+  name: Sholinganallur
+  latitude: ''
+  longitude: ''
+  district: Kancheepuram

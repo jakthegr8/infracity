@@ -1,0 +1,25 @@
+#https://en.wikipedia.org/wiki/List_of_Chennai_Corporation_zones
+Chennai:
+  name: Chennai
+  latitude: ''
+  longitude: ''
+  state: Tamil Nadu
+
+Kancheepuram:
+  name: Kancheepuram
+  latitude: ''
+  longitude: ''
+  state: Tamil Nadu  
+
+Tiruvallur:
+  name: Tiruvallur
+  latitude: ''
+  longitude: ''
+  state: Tamil Nadu  
+
+
+Tiruvallur/Kancheepuram:
+  name: Tiruvallur
+  latitude: ''
+  longitude: ''
+  state: Tamil Nadu

@@ -1,0 +1,126 @@
+#https://en.wikipedia.org/wiki/List_of_Chennai_Corporation_zones
+
+
+Thiruvottiyur:
+  name: Thiruvottiyur
+  zone_number: 1
+  latitude: ''
+  longitude: ''
+  taluk: Tiruvottiyur
+  district: Tiruvallur
+
+Manali:
+  name: Manali
+  zone_number: 1
+  latitude: ''
+  longitude: ''
+  taluk: Tiruvottiyur/Madhavaram/Ponneri
+  district: Tiruvallur
+
+Madhavaram:
+  name: Madhavaram
+  zone_number: 1
+  latitude: ''
+  longitude: ''
+  taluk: Madhavaram
+  district: Tiruvallur
+
+Tondiarpet:
+  name: Tondiarpet
+  zone_number: 1
+  latitude: ''
+  longitude: ''
+  taluk: Tondiarpet
+  district: Chennai
+
+Royapuram:
+  name: Royapuram
+  zone_number: 1
+  latitude: ''
+  longitude: ''
+  taluk: Egmore/Purasaiwalkam
+  district: Chennai
+
+Thiru. Vi. Ka. Nagar:
+  name: Thiru. Vi. Ka. Nagar
+  zone_number: 1
+  latitude: ''
+  longitude: ''
+  taluk: Perambur/Ayanavaram/Purasaiwalkam
+  district: Chennai
+
+Ambattur:
+  name: Ambattur
+  zone_number: 1
+  latitude: ''
+  longitude: ''
+  taluk: Ambattur
+  district: Tiruvallur
+
+Anna Nagar:
+  name: Anna Nagar
+  zone_number: 1
+  latitude: ''
+  longitude: ''
+  taluk: Ayanavaram/Aminjikarai
+  district: Chennai
+
+Teynampet:
+  name: Teynampet
+  zone_number: 1
+  latitude: ''
+  longitude: ''
+  taluk: Mylapore/Egmore
+  district: Chennai
+
+Kodambakkam:
+  name: Kodambakkam
+  zone_number: 1
+  latitude: ''
+  longitude: ''
+  taluk: Mambalam/Guindy/Egmore
+  district: Chennai
+
+Valasaravakkam:
+  name: Valasaravakkam
+  zone_number: 1
+  latitude: ''
+  longitude: ''
+  taluk: Maduravoyal/Alandur
+  district: Tiruvallur/Kancheepuram
+
+Alandur:
+  name: Alandur
+  zone_number: 1
+  latitude: ''
+  longitude: ''
+  taluk: Alandur
+  district: Kancheepuram
+
+Adyar:
+  name: Adyar
+  zone_number: 1
+  latitude: ''
+  longitude: ''
+  taluk: Mylapore/Velachery
+  district: Chennai
+
+Perungudi:
+  name: Perungudi
+  zone_number: 1
+  latitude: ''
+  longitude: ''
+  taluk: Sholinganallur
+  district: Kancheepuram
+
+Sholinganallur:
+  name: Sholinganallur
+  zone_number: 1
+  latitude: ''
+  longitude: ''
+  taluk: Sholinganallur
+  district: Kancheepuram
+
+
+
+
