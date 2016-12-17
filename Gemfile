@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'sass-rails'
 gem 'materialize-sass'
 gem 'administrate'
+gem 'httparty'
 
 group :development, :test do
   gem 'dotenv'
