@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "dashboard#home"
   match 'register', to: 'users#register', via: [:post]
   match 'upload_user_avatar', to: 'users#upload_user_avatar', via: [:post, :patch]
   # match 'upload_road_photo', to: 'ratings#upload_road_photo', via: [:post, :patch]
