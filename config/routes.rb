@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   end
 
   root to: "admin/countries#index"
+  resources :roads do
+    resources :complaints, only: [:show]
+  end
+
   resources :profiles
 
   resources :dashboard
