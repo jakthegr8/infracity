@@ -9,6 +9,19 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    @user = User.first
+  end
+
+  def upload_user_avatar
+    @update_user = User.where(id: params[:user][:id]).try(:first)
+    avatar_data = params.require(:user).slice('avatar').permit!
+    if @update_user.update(avatar_data)
+      render type: :jbuilder
+    else
+      format.json { render json: @update_user.errors, status: :unprocessable_entity }
+    end
+  end
 
   private
 

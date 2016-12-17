@@ -12,6 +12,7 @@ gem 'materialize-sass'
 gem 'administrate'
 gem 'httparty'
 gem 'dotenv-rails'
+gem "paperclip", "~> 5.0.0"
 
 group :development, :test do
   gem 'pry'

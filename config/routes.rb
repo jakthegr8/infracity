@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  match 'register', to: 'users#register', via: [:post], default: :json
+  match 'register', to: 'users#register', via: [:post]
+  match 'upload_user_avatar', to: 'users#upload_user_avatar', via: [:post, :patch]
+  match 'upload', to: 'users#index', via: [:get]
 
   namespace :admin do
     resources :countries

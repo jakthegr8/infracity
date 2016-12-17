@@ -15,6 +15,10 @@ class UserDashboard < Administrate::BaseDashboard
     email: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    avatar_file_name: Field::String,
+    avatar_content_type: Field::String,
+    avatar_file_size: Field::Number,
+    avatar_updated_at: Field::DateTime,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -26,7 +30,6 @@ class UserDashboard < Administrate::BaseDashboard
     :role_type,
     :id,
     :name,
-    :email,
     :password,
   ].freeze
 
@@ -40,6 +43,10 @@ class UserDashboard < Administrate::BaseDashboard
     :email,
     :created_at,
     :updated_at,
+    :avatar_file_name,
+    :avatar_content_type,
+    :avatar_file_size,
+    :avatar_updated_at,
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -50,6 +57,10 @@ class UserDashboard < Administrate::BaseDashboard
     :name,
     :password,
     :email,
+    :avatar_file_name,
+    :avatar_content_type,
+    :avatar_file_size,
+    :avatar_updated_at,
   ].freeze
 
   # Overwrite this method to customize how users are displayed
