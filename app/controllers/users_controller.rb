@@ -23,6 +23,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def my_uploads
+    render json: User.find(params[:id]).photos.map { |image_path| request.base_url + image_path }
+  end
+
   private
 
   def user_params
