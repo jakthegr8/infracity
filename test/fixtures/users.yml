@@ -1,22 +1,26 @@
 w001:
+  id: 1
   name: Durai
   password: user1
   email: ward001@chennaicorporation.gov.in
   role_type: General
 
 w002:
+  id: 2
   name: Mani
   password: user2
   email: ward002@chennaicorporation.gov.in
   role_type: General
 
 Arun:
+  id: 3
   name: Arun
   password: admin
   email: arun.ranush@gmail.com
   role_type: Admin
 
 Antony:
+  id: 4
   name: Antony
   password: admin
   email: antony.java@gmail.com

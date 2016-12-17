@@ -4,7 +4,11 @@ class RatingsController < ApplicationController
   # GET /ratings
   # GET /ratings.json
   def index
-    @ratings = Rating.all
+    @ratings = Rating.all.includes(:road, :user)
+  end
+
+  def approval
+    @ratings = Rating.where(status: :pending).includes(:road, :user)
   end
 
   # GET /ratings/1

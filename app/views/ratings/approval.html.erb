@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Approve</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Road</th>
+      <th>Encroachment</th>
+      <th>Platform usability</th>
+      <th>Safety</th>
+      <th>Overall quality</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ratings.each do |rating| %>
+      <tr>
+        <td>
+          <%= rating.road.summary %><br>
+          <%= rating.user.email %><br>
+          <%= rating.status %><br>
+          <strong>Comments: </strong><%= rating.comments %><br>
+        </td>
+        <td><%= star_html(rating.road_quality) %></td>
+        <td><%= star_html(rating.encroachment) %></td>
+        <td><%= star_html(rating.platform_usability) %></td>
+        <td><%= star_html(rating.safety) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rating', new_rating_path %>
+
+<script type='text/javascript'>
+  $(function() {
+      $('.rating').barrating({
+        theme: 'fontawesome-stars',
+        readonly: true
+      });
+   });
+</script>

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   end
 
   resources :ratings
+  get 'approval', to: 'ratings#approval'
   resources :profiles
   resources :dashboard
   resources :roads, defaults: {format: :json} do

@@ -1,17 +1,31 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  road_quality: 1
-  encroachment: 1
-  platform_usability: 1
+  road_quality: 3
+  encroachment: 5
+  platform_usability: 3
   safety: 1
-  comments: MyText
+  comments: A Decent Road
+  status: 0
   road_id: 1
+  user_id: 1
 
 two:
+  road_quality: 3
+  encroachment: 4
+  platform_usability: 4
+  safety: 1
+  comments: Bad Road
+  status: 1
+  road_id: 1
+  user_id: 1
+
+three:
   road_quality: 1
-  encroachment: 1
+  encroachment: 5
   platform_usability: 1
   safety: 1
-  comments: MyText
+  comments: Okay Road
+  status: 2
   road_id: 1
+  user_id: 1
