@@ -2,12 +2,10 @@ class UsersController < ApplicationController
   def register
     @user = User.new(user_params)
     @user.role_type = get_default_role_type
-    respond_to do |format|
-      if @user.save
-        format.json { render json: @user, status: :created }
-      else
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.save
+      render type: :jbuilder
+    else
+      format.json { render json: @user.errors, status: :unprocessable_entity }
     end
   end
 

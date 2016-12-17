@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  
-  post 'users/register', as: 'register'
+  match 'register', to: 'users#register', via: [:post], default: :json
 
   namespace :admin do
     resources :countries
@@ -22,7 +21,6 @@ Rails.application.routes.draw do
   end
 
   resources :profiles
-
   resources :dashboard
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

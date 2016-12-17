@@ -2,8 +2,8 @@ base: &base
   adapter: postgresql
   pool: 200
   database: infracity_development
-  username: portal
-  password: portal
+  username: rpx_service
+  password: rpx_service-qa
   host: localhost
 
 development:
