@@ -11,7 +11,7 @@ gem 'sass-rails'
 gem 'materialize-sass'
 gem 'administrate'
 # gem 'bcrypt', '3.1.11'
-gem 'clearance'
+# gem 'clearance'
 
 group :development, :test do
   gem 'dotenv'
