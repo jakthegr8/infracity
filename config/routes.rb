@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "dashboard#home"
+  root to: "ratings#approval"
   match 'register', to: 'users#register', via: [:post]
   match 'upload_user_avatar', to: 'users#upload_user_avatar', via: [:post, :patch]
   # match 'upload_road_photo', to: 'ratings#upload_road_photo', via: [:post, :patch]
@@ -46,5 +46,4 @@ Rails.application.routes.draw do
       get :my_uploads
     end
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
