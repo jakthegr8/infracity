@@ -15,7 +15,7 @@ class RoadsController < ApplicationController
         region: 41
       },
       photos: road.users_roads_photo_maps.map{|urpm| request.base_url+urpm.photo.url}.uniq,
-      complaints: ["669GBM"],
+      complaints: road.complaints.map(&:id),
       encroachment: average(road.ratings.collect(&:encroachment)),
       safety: average(road.ratings.collect(&:safety)),
       platform_usability: average(road.ratings.collect(&:platform_usability)),
