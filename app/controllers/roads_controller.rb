@@ -9,6 +9,11 @@ class RoadsController < ApplicationController
         contact: "9445467115",
         ward_member: "J.P. Chandrika"
       },
+      ward: {
+        number: 119,
+        zone: 7,
+        region: 41
+      },
       photos: road.users_roads_photo_maps.map{|urpm| request.base_url+urpm.photo.url}.uniq,
       complaints: ["669GBM"],
       encroachment: average(road.ratings.collect(&:encroachment)),

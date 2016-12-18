@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20161217174245) do
     t.string   "corp_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["corp_id", "road_id"], name: "index_complaints_on_corp_id_and_road_id", unique: true, using: :btree
   end
 
   create_table "countries", force: :cascade do |t|
