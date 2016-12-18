@@ -21,8 +21,7 @@
       <% @ratings.each do |rating| %>
         <tr>
           <td>
-            <strong>Road: </strong><%= rating.road.summary %><br>
-            <strong>Comments: </strong><%= rating.comments %><br>
+            <%= rating.road.summary %><br>
             <% rating.photos.each do |photo| %>
               <a class="fancybox" rel="group" href="<%= photo[:original] %>">
                 <img class='thumbsize img-circle' src="<%= photo[:thumbnail] %>" alt="" />

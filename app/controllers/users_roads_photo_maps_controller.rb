@@ -15,6 +15,7 @@ class UsersRoadsPhotoMapsController < ApplicationController
   private
 
   def photo_maps_params
-    params.permit(:road_id, :user_id, :photo)
+    pmp = params[:users_roads_photo_map] ? params.require(:users_roads_photo_map) : params
+    pmp.permit(:road_id, :user_id, :photo)
   end
 end
