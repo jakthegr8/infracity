@@ -14,8 +14,8 @@ class ComplaintsController < ApplicationController
   end
 
   def create
-    Road.find(params[:road_id]).complaints.create(corp_id: '669GBM')
-    head :created
+    complaint = Road.find(params[:road_id]).complaints.create(corp_id: '669GBM')
+    render json: complaint.to_json, status: :created
   end
 
   def index
