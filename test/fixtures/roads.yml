@@ -38,3 +38,57 @@ r08:
   points: "gwtnA{vyhNPiDLo@Bc@PoFPkEb@{LB_AFcDl@gM"
   rating: 5
   summary: "Peters Rd Flyover"
+
+r09:
+  id: 9
+  points: "_stnAuq{hNgASkC]mBQ}CQy@Km@Ms@]qAm@"
+  rating: 3
+  summary: "Westcott Rd"
+
+r10:
+  id: 10
+  points: "{stnAgyzhNBiBFcDH]V}ERaE"
+  rating: 2
+  summary: "Peters Rd and Peters Rd Flyover"
+
+r11:
+  id: 11
+  points: "{stnAgyzhNm@zN]tJ@x@QhD"
+  rating: 4
+  summary: "Peters Rd Flyover"
+
+r12:
+  id: 12
+  points: "wwtnA_uyhNaEyFmAqBm@w@"
+  rating: 3
+  summary: "Anna Salai/Mount Rd/Nagapattinam-Chennai Hwy/Trichy-Chennai Hwy"
+
+r13:
+  id: 13
+  points: "yaunAgbzhNeBsAeA{@cB}APIaBoB_BsBsCyD}AoBuHkKeBwBOLGI"
+  rating: 1
+  summary: "Anna Salai/Mount Rd/Nagapattinam-Chennai Hwy/Trichy-Chennai Hwy"
+
+r14:
+  id: 14
+  points: "uzvnA_h|hNbGp@vFf@j@PDB"
+  rating: 5
+  summary: "General Patters Rd"
+
+r15:
+  id: 15
+  points: "givnAod|hN^X@j@zCEp@fARZ"
+  rating: 4
+  summary: "General Patters Rd"
+
+r16:
+  id: 16
+  points: "mgvnAab|hNsB|Aw@~@"
+  rating: 2
+  summary: "Arumugam St/State Bank St"
+
+r17:
+  id: 17
+  points: "k_vnAog{hNnHURGXA`BCfDQ^G"
+  rating: 3
+  summary: "Pattullos Rd/Patullos Rd"
