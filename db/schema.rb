@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161217174245) do
+ActiveRecord::Schema.define(version: 20170125085447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20161217174245) do
     t.string   "corp_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["corp_id", "road_id"], name: "index_complaints_on_corp_id_and_road_id", unique: true, using: :btree
   end
 
   create_table "countries", force: :cascade do |t|
@@ -62,9 +63,8 @@ ActiveRecord::Schema.define(version: 20161217174245) do
     t.integer  "safety"
     t.text     "comments"
     t.integer  "road_id"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.integer  "status",             default: 0
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "user_id"
   end
 
@@ -111,13 +111,17 @@ ActiveRecord::Schema.define(version: 20161217174245) do
     t.string   "password"
     t.string   "email"
     t.integer  "role_type_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "encrypted_password",  limit: 128
+    t.string   "confirmation_token",  limit: 128
+    t.string   "remember_token",      limit: 128
     t.index ["email"], name: "index_users_on_email", using: :btree
+    t.index ["remember_token"], name: "index_users_on_remember_token", using: :btree
     t.index ["role_type_id"], name: "index_users_on_role_type_id", using: :btree
   end
 
@@ -128,8 +132,9 @@ ActiveRecord::Schema.define(version: 20161217174245) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "status",             default: 0
     t.index ["road_id"], name: "index_users_roads_photo_maps_on_road_id", using: :btree
     t.index ["user_id"], name: "index_users_roads_photo_maps_on_user_id", using: :btree
   end

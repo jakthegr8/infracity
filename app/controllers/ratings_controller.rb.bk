@@ -1,5 +1,6 @@
 class RatingsController < ApplicationController
   before_action :set_rating, only: [:show, :edit, :update, :destroy, :approve, :reject]
+
   # GET /ratings
   # GET /ratings.json
   def index
@@ -7,23 +8,25 @@ class RatingsController < ApplicationController
   end
 
   def approval
-    @ratings = Rating.where(status: :pending).includes(:road, :user)
+    @uniq_user_road_map = UsersRoadsPhotoMap.where(status: :pending)
+        .select("users_roads_photo_maps.user_id", "users_roads_photo_maps.road_id").distinct
   end
 
   def approve
-    @rating.approve!
+    rating = Rating.find(params[:id])
+    rating.photos_map.approve!
     redirect_to approval_path, notice: 'Successfully Approved'
   end
 
   def reject
-    @rating.reject!
+    rating = Rating.find(params[:id])
+    rating.photos_map.reject!
     redirect_to approval_path, notice: 'Successfully Rejected'
   end
 
   def reset
     Rating.all.each do |rating|
-      rating.status = :pending
-      rating.save!
+      rating.photos_map.reset!
     end
     redirect_to approval_path
   end

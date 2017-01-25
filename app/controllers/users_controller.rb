@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < Clearance::UsersController
   def register
     @user = User.where(email: params[:email]).first
     if @user.present?
@@ -32,14 +32,4 @@ class UsersController < ApplicationController
     render json: User.find(params[:id]).photos.map { |image_path| request.base_url + image_path }
   end
 
-  private
-
-  def user_params
-    params.permit(:name, :email, :password)
-  end
-
-  def get_default_role_type
-    @role_type ||= RoleType.where(is_default: true).first
-    @role_type
-  end
 end

@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<h4>Approve Submissions</h4>
+
+<% if @uniq_user_road_map.size <= 0 %>
+  <p>No submissions left to approve!</p>
+<% else %>
+  <table class="highlight">
+    <thead>
+      <tr>
+        <th>Road</th>
+        <th>Platform</th>
+        <th>Safety</th>
+        <th>Quality</th>
+        <th>Encroachment</th>
+        <th>Approve?</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @uniq_user_road_map.each do |map| %>
+          <tr>
+            <td>
+              <% map.rating.&road.&summary %><br>
+              <% map.road_map.each do |roadmap| %>
+                <a class="fancybox" rel="group" href="<%= roadmap.photo.url %>">
+                  <img class='thumbsize img-circle' src="<%= roadmap.photo.url(:thumb) %>" alt="" />
+                </a>
+              <% end %>
+            </td>
+            <td><%= star_html(map.rating.&platform_usability) %></td>
+            <td><%= star_html(map.rating.&safety) %></td>
+            <td><%= star_html(map.rating.&road_quality) %></td>
+            <td><%= star_html(map.rating.&encroachment) %></td>
+            <td>
+              <%= link_to 'Yes', approve_rating_path(map.rating.id) %> /
+              <%= link_to 'No', reject_rating_path(map.rating.id) %>
+            </td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <script type='text/javascript'>
+    $(document).ready(function() {
+      $(".fancybox").fancybox();
+      $('.rating').barrating({
+        theme: 'fontawesome-stars',
+        readonly: true
+      });
+    });
+  </script>
+
+<% end %>

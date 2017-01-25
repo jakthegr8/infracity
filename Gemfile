@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'sass-rails'
 gem 'materialize-sass'
 gem 'administrate'
+gem 'clearance'
 gem 'httparty'
 gem 'dotenv-rails'
 gem "paperclip", "~> 5.0.0"
